@@ -204,7 +204,7 @@ jobs:
 
       - name: Deploy Dev Site to Azure
         if: ${{ !startsWith(github.ref, 'refs/heads/feature/') && github.event_name != 'pull_request' && needs.variables.outputs.ENVIRONMENT == 'dev'}}
-        uses: Azure/webapps-deploy@v2.1.6
+        uses: Azure/webapps-deploy@v2.2.3
         with:
           app-name: ${{ needs.variables.outputs.AZURE_SITE_NAME }}
           package: 'demo/src/Foundation/swedbankpayartifacts/site'
@@ -212,7 +212,7 @@ jobs:
         
       - name: Deploy Dev Commerce Manager to Azure
         if: ${{ !startsWith(github.ref, 'refs/heads/feature/') && github.event_name != 'pull_request' && needs.variables.outputs.ENVIRONMENT == 'dev'}}
-        uses: Azure/webapps-deploy@v2.1.6
+        uses: Azure/webapps-deploy@v2.2.3
         with:
           app-name: ${{ needs.variables.outputs.AZURE_CM_NAME }}
           package: 'demo/src/Foundation.CommerceManager/swedbankpayartifacts/cm'
@@ -221,7 +221,7 @@ jobs:
 
       - name: Deploy Uat Site to Azure
         if: ${{ github.event_name != 'pull_request' && needs.variables.outputs.ENVIRONMENT == 'uat'}}
-        uses: Azure/webapps-deploy@v2.1.6
+        uses: Azure/webapps-deploy@v2.2.3
         with:
           app-name: ${{ needs.variables.outputs.AZURE_SITE_NAME }}
           package: 'demo/src/Foundation/swedbankpayartifacts/site'
@@ -229,7 +229,7 @@ jobs:
         
       - name: Deploy Uat Commerce Manager to Azure
         if: ${{ github.event_name != 'pull_request' && needs.variables.outputs.ENVIRONMENT == 'uat'}}
-        uses: Azure/webapps-deploy@v2.1.6
+        uses: Azure/webapps-deploy@v2.2.3
         with:
           app-name: ${{ needs.variables.outputs.AZURE_CM_NAME }}
           package: 'demo/src/Foundation.CommerceManager/swedbankpayartifacts/cm'
@@ -237,7 +237,7 @@ jobs:
 
       - name: Deploy Pro Site to Azure
         if: ${{ github.event_name != 'pull_request' && needs.variables.outputs.ENVIRONMENT == 'pro'}}
-        uses: Azure/webapps-deploy@v2.1.6
+        uses: Azure/webapps-deploy@v2.2.3
         with:
           app-name: ${{ needs.variables.outputs.AZURE_SITE_NAME }}
           package: 'demo/src/Foundation/swedbankpayartifacts/site'
@@ -245,7 +245,7 @@ jobs:
         
       - name: Deploy Pro Commerce Manager to Azure
         if: ${{ github.event_name != 'pull_request' && needs.variables.outputs.ENVIRONMENT == 'pro'}}
-        uses: Azure/webapps-deploy@v2.1.6
+        uses: Azure/webapps-deploy@v2.2.3
         with:
           app-name: ${{ needs.variables.outputs.AZURE_CM_NAME }}
           package: 'demo/src/Foundation.CommerceManager/swedbankpayartifacts/cm'
